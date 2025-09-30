@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type Props = {
     recipeId: string;
-    onCommentAdded?: () => void; // optional funkcija
+    onCommentAdded?: () => void; 
 };
 
 export default function CommentForm({ recipeId, onCommentAdded }: Props) {

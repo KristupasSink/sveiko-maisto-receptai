@@ -7,12 +7,12 @@ export default function RecipeCard({ recipe }: { recipe: any }) {
       <TouchableOpacity style={styles.card}>
         <Text style={styles.title}>{recipe.title}</Text>
         
-        {/* Aprašymas */}
+        
         {recipe.description && (
           <Text style={styles.description}>{recipe.description}</Text>
         )}
 
-        {/* Papildoma info */}
+        
         <View style={styles.metaBox}>
           {recipe.time && (
             <Text style={styles.meta}>⏱ {recipe.time}</Text>
@@ -28,7 +28,7 @@ export default function RecipeCard({ recipe }: { recipe: any }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#fbc687", // šilta oranžinė
+    backgroundColor: "#fbc687", 
     padding: 16,
     borderRadius: 16,
     marginBottom: 12,
