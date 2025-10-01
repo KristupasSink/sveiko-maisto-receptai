@@ -1,5 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, BackHandler } from "react-native";
 import { Link } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
 import CustomButton from "../components/CustomButton";
 
 const categories = [
@@ -8,7 +10,29 @@ const categories = [
   { key: "pagrindiniai", title: "🍗 Pagrindiniai patiekalai" },
 ];
 
+
 export default function Index() {
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const backAction = () => {
+      if (!navigation.canGoBack())
+        return false;
+
+      navigation.goBack();
+
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pasirinkite kategoriją</Text>

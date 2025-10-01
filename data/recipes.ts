@@ -1,5 +1,3 @@
-import Category from "@/app/[category]";
-
 export const recipes = [
   {
     id: "1",
